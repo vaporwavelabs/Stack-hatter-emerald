@@ -1,0 +1,7 @@
+{
+  "name": "stack_hat 2",
+  "description": "A professional-grade terminal-based application generator that uses AI to architect, scaffold, and simulate full-stack and terminal applications with real-time terminal feedback.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

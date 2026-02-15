@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack_hat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
+            overflow: hidden;
+            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
+        }
+
+        body.light-mode {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .terminal-font {
+            font-family: 'Fira Code', monospace;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(16, 185, 129, 0.25);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(16, 185, 129, 0.5);
+        }
+
+        .scanline {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.08) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.3;
+        }
+
+        .glass-pane {
+            backdrop-filter: blur(40px) saturate(180%);
+            background-color: rgba(15, 15, 20, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .light-mode .glass-pane {
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.05);
+        }
+        
+        .agent-popout {
+            border: 2px solid rgba(16, 185, 129, 0.5);
+            box-shadow: 0 0 50px rgba(16, 185, 129, 0.2), 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        .glow-text-emerald {
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+        }
+
+        .dashboard-stat-container {
+          border-left: 1px solid rgba(16, 185, 129, 0.1);
+          padding-left: 1.5rem;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="dark">
+    <div id="root"></div>
+</body>
+</html>
